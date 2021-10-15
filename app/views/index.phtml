@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: #0D1B1E;
+            padding-left: 40%;
+            padding-top:10%;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+
+<?php 
+
+extract($_POST);
+
+//var_dump($message);
+
+$count = count($message);
+
+echo '<div id="teste" style="padding: 10px; width: 300px; height: 200px; background-color:#6B7F82;overflow: scroll;">';
+for ($i=0; $i < $count; $i++) { 
+    //var_dump ($message[$i]);
+    $dados_Msn = ($message[$i]['dados_Msn']);
+    $nome_Msn = ($message[$i]['nome_Msn']);
+
+
+    echo '<div>';
+    echo   '<img src="' . "https://i.ibb.co/H7ZQpQW/Kevin-Mitnick.jpg" . '"  " alt="" style="width: 5%;height: 5%;border-radius: 70%; margin-top: 10px;">';
+    echo    '<label id="NomeUsuario"> ' . $nome_Msn . '</label>';
+    echo'</div>';
+    echo'<div>';
+    echo    '<label id="Mensagem">' . $dados_Msn . '</label>';
+    echo'</div>';
+
+    echo "___________________________________";
+
+}
+    echo'</div>'; 
+    echo '</div>';
+    echo'<form action="" method="post">';
+    echo    '<div>';
+    echo        '<input type="text" name="" id="" style="width: 38%; padding: 0px;">';
+    echo    '</div>';
+    echo    '<div>';
+    echo        '<input type="submit" value="Enviar">';
+    echo    '</div>';
+    echo '</form>';
+?>
+</body>
+</html>
